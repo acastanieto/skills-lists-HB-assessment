@@ -2,7 +2,7 @@
 INTERMEDIATE = True
 
 # To work on the advanced problems, set to True
-ADVANCED = False
+ADVANCED = True
 
 
 def all_odd(number_list):
@@ -296,21 +296,30 @@ def intermediate_join_strings(list_of_words):
     raises an error.
     """
 
-    joined_words = [word for word in list_of_words]
+    return ", ".join([word for word in list_of_words])
 
-    return joined_words
 
-print intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
-#
-# def adv_find_unique_long_words(my_string):
-#     """Return a list of words that only appeared only once
-#     within the input string and are at least 6 characters long.
-#
-#     >>> adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
-#     ['nachos', 'coffee']
-#
-#     """
-#     return []
+def adv_find_unique_long_words(my_string):
+    """Return a list of words that appeared only once
+    within the input string and are at least 6 characters long.
+
+    >>> adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
+    ['nachos', 'coffee']
+
+    """
+    # strategy:
+    # 1. remove non-alpha characters from string
+    # 2. split words by " " into list
+    # 3. pop each word off the list, then see if it's
+    #       - at least 6 characters long
+    #       - NOT in the remaining list
+    #       - NOT in the new_list
+    # 4. if it meets those conditions, append it to the new_list
+    
+
+
+
+    return []
 
 
 ##############################################################################
