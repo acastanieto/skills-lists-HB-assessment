@@ -119,39 +119,49 @@ def smallest_int(number_list):
 
     return smallest_num
 
-#
-#
-# def largest_int(number_list):
-#     """Find the largest integer in a list of integers and return it.
-#
-#         >>> largest_int([-5, 2, -5, 7])
-#         7
-#
-#     If the input list is empty, return None:
-#
-#         >>> largest_int([]) is None
-#         True
-#
-#     """
-#
-#     return 0
-#
-#
-# def halvesies(number_list):
-#     """Return list of numbers from input list, each divided by two.
-#
-#         >>> halvesies([2, 6, -2])
-#         [1.0, 3.0, -1.0]
-#
-#     If any of the numbers are, make sure you don't round off the half:
-#
-#         >>> halvesies([1, 5])
-#         [0.5, 2.5]
-#
-#     """
-#
-#     return []
-#
+
+
+def largest_int(number_list):
+    """Find the largest integer in a list of integers and return it.
+
+        >>> largest_int([-5, 2, -5, 7])
+        7
+
+    If the input list is empty, return None:
+
+        >>> largest_int([]) is None
+        True
+
+    """
+
+    if len(number_list) < 1:
+        return None
+
+    max_number = number_list[0]
+
+    for num in number_list:
+        if num > max_number:
+            max_number = num
+
+    return max_number
+
+
+
+def halvesies(number_list):
+    """Return list of numbers from input list, each divided by two.
+
+        >>> halvesies([2, 6, -2])
+        [1.0, 3.0, -1.0]
+
+    If any of the numbers are, make sure you don't round off the half:
+
+        >>> halvesies([1, 5])
+        [0.5, 2.5]
+
+    """
+
+    return []
+
 #
 # def word_lengths(word_list):
 #     """Return the length of words in the input list.
