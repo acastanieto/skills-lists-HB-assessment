@@ -18,7 +18,7 @@ def all_odd(number_list):
     odd_numbers = []
 
     for num in number_list:
-        if num % 2 != 0:
+        if num % 2 == 1:
             odd_numbers.append(num)
 
 
@@ -40,6 +40,7 @@ def all_even(number_list):
     for num in number_list:
         if num % 2 == 0:
             even_numbers.append(num)
+
     return even_numbers
 
 
@@ -159,10 +160,10 @@ def halvesies(number_list):
         [0.5, 2.5]
 
     """
-    div_by_two = []
+    # for num in number_list:
+    #     div_by_two.append(float(num) / 2)
 
-    for num in number_list:
-        div_by_two.append(float(num) / 2)
+    div_by_two = [float(num) / 2 for num in number_list]
 
     return div_by_two
 
@@ -174,10 +175,10 @@ def word_lengths(word_list):
         [5, 3, 5, 4]
 
     """
-    word_lengths = []
+    # for word in word_list:
+    #     word_lengths.append(len(word))
 
-    for word in word_list:
-        word_lengths.append(len(word))
+    word_lengths = [len(word) for word in word_list]
 
     return word_lengths
 
@@ -201,7 +202,7 @@ def sum_numbers(number_list):
     sum = 0
 
     for num in number_list:
-        sum = sum + num
+        sum += num
 
     return sum
 
@@ -228,7 +229,7 @@ def mult_numbers(number_list):
     product = 1
 
     for num in number_list:
-        product = product * num
+        product *= num
 
     return product
 
@@ -252,7 +253,7 @@ def join_strings(word_list):
     joined_string = ""
 
     for word in word_list:
-        joined_string = joined_string + word
+        joined_string += word
 
     return joined_string
 
@@ -270,9 +271,9 @@ def average(number_list):
     sum = 0
 
     for num in number_list:
-        sum = float(sum + num)
+        sum += num
 
-    average = sum/len(number_list)
+    average = float(sum)/len(number_list)
 
     return average
 
@@ -296,7 +297,9 @@ def intermediate_join_strings(list_of_words):
     raises an error.
     """
 
-    return ", ".join([word for word in list_of_words])
+    # another way:  ", ".join([word for word in list_of_words])
+
+    return "".join([word + ", " for word in list_of_words])[:-2]
 
 
 def adv_find_unique_long_words(my_string):
@@ -307,29 +310,40 @@ def adv_find_unique_long_words(my_string):
     ['nachos', 'coffee']
 
     """
-    # strategy:
-    # 1. remove non-alpha characters from string
-    # 2. split words by " " into list
-    # 3. pop each word off the list, then see if it's
-    #       - at least 6 characters long
-    #       - NOT in the remaining list
-    #       - NOT in the new_list
-    # 4. if it meets those conditions, append it to the new_list
+
+    # ''' Comment this line out to use the re module (regular expressions)
+    import re
+    word_list = re.split("\W+", my_string)
+    #'''
 
     alpha_only = ""
     unique_words = []
+
+    ''' Comment this line out for an alternative to the re module as follows:
 
     for char in my_string:
         if char in "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ":
             alpha_only = alpha_only + char
 
     word_list = alpha_only.split(" ")
+
+    #'''
+
     for word in word_list:
         if len(word) >= 6 and word_list.count(word) == 1:
             unique_words.append(word)
 
     return unique_words
 
+    '''
+    REGULAR EXPRESSIONS are a way to match strings with specified patterns
+    \W will match ONLY ONE non-alphanumeric character, including whitespace
+    \W+ will match ONE OR MORE non-alphanumeric characters, including whitespace
+    example re.split("\W+"", "I like cheese, chocolate, and bread!!")
+        this will split my string every time you encounter one or more
+            non-alphanumeric character, including whitespace
+        >> ["I", "like", "cheese", "chocolate", "and", "bread"]
+    '''
 
 
 
