@@ -315,9 +315,16 @@ def adv_find_unique_long_words(my_string):
     #       - NOT in the remaining list
     #       - NOT in the new_list
     # 4. if it meets those conditions, append it to the new_list
-    
+    string_alpha_only = ""
+
+    for char in my_string:
+        if char in "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            string_alpha_only = string_alpha_only + char
+        print string_alpha_only
 
 
+
+print adv_find_unique_long_words("I ate popcorn, more popcorn, nachos, kale, and coffee.")
 
     return []
 
