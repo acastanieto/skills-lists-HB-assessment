@@ -166,88 +166,117 @@ def halvesies(number_list):
 
     return div_by_two
 
-#
-# def word_lengths(word_list):
-#     """Return the length of words in the input list.
-#
-#         >>> word_lengths(["hello", "hey", "hello", "spam"])
-#         [5, 3, 5, 4]
-#
-#     """
-#
-#     return []
-#
-#
-# def sum_numbers(number_list):
-#     """Return the sum of all of the numbers in the list.
-#
-#     Python has a built-in function, `sum()`, which already does this -- but for
-#     this exercise, you should not use it.
-#
-#         >>> sum_numbers([1, 2, 3, 10])
-#         16
-#
-#     Any empty list should return the sum of zero:
-#
-#         >>> sum_numbers([])
-#         0
-#
-#     """
-#
-#     return 0
-#
-#
-# def mult_numbers(number_list):
-#     """Return product (result of multiplication) of the numbers in the list.
-#
-#         >>> mult_numbers([1, 2, 3])
-#         6
-#
-#     Obviously, if there is a zero in the input, the product will be zero:
-#
-#         >>> mult_numbers([10, 20, 0, 50])
-#         0
-#
-#     As explained at http://en.wikipedia.org/wiki/Empty_product, if the list is
-#     empty, the product should be 1:
-#
-#         >>> mult_numbers([])
-#         1
-#
-#     """
-#     return 0
-#
-#
-# def join_strings(word_list):
-#     """Return a string of all input strings joined together.
-#
-#     Python ha a built-in method on lists, `join` -- but this exercise, you
-#     should not use it.
-#
-#         >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
-#         'spamspambaconballoonicorn'
-#
-#     For an empty list, you should return an empty string:
-#
-#         >>> join_strings([])
-#         ''
-#
-#     """
-#     return ""
-#
-#
-# def average(number_list):
-#     """Return the average (mean) of the list of numbers given.
-#
-#         >>> average([2, 12, 3])
-#         5.666666666666667
-#
-#     There is no defined answer if the list given is empty. It's fine if
-#     this raises an error when given an empty list.
-#     """
-#     return 0
-#
-#
+
+def word_lengths(word_list):
+    """Return the length of words in the input list.
+
+        >>> word_lengths(["hello", "hey", "hello", "spam"])
+        [5, 3, 5, 4]
+
+    """
+    word_lengths = []
+
+    for word in word_list:
+        word_lengths.append(len(word))
+
+    return word_lengths
+
+
+def sum_numbers(number_list):
+    """Return the sum of all of the numbers in the list.
+
+    Python has a built-in function, `sum()`, which already does this -- but for
+    this exercise, you should not use it.
+
+        >>> sum_numbers([1, 2, 3, 10])
+        16
+
+    Any empty list should return the sum of zero:
+
+        >>> sum_numbers([])
+        0
+
+    """
+
+    sum = 0
+
+    for num in number_list:
+        sum = sum + num
+
+    return sum
+
+
+def mult_numbers(number_list):
+    """Return product (result of multiplication) of the numbers in the list.
+
+        >>> mult_numbers([1, 2, 3])
+        6
+
+    Obviously, if there is a zero in the input, the product will be zero:
+
+        >>> mult_numbers([10, 20, 0, 50])
+        0
+
+    As explained at http://en.wikipedia.org/wiki/Empty_product, if the list is
+    empty, the product should be 1:
+
+        >>> mult_numbers([])
+        1
+
+    """
+
+    product = 1
+
+    for num in number_list:
+        product = product * num
+
+    return product
+
+
+def join_strings(word_list):
+    """Return a string of all input strings joined together.
+
+    Python has a built-in method on lists, `join` -- but this exercise, you
+    should not use it.
+
+        >>> join_strings(["spam", "spam", "bacon", "balloonicorn"])
+        'spamspambaconballoonicorn'
+
+    For an empty list, you should return an empty string:
+
+        >>> join_strings([])
+        ''
+
+    """
+
+    joined_string = ""
+
+    for word in word_list:
+        joined_string = joined_string + word
+
+    return joined_string
+
+
+def average(number_list):
+    """Return the average (mean) of the list of numbers given.
+
+        >>> average([2, 12, 3])
+        5.666666666666667
+
+    There is no defined answer if the list given is empty. It's fine if
+    this raises an error when given an empty list.
+    """
+
+    sum = 0
+
+    for num in number_list:
+        sum = float(sum + num)
+
+    average = sum/len(number_list)
+
+    return average
+
+
 # ##############################################################################
 # # END OF SKILLS TEST; YOU CAN STOP HERE.
 #
