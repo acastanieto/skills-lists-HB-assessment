@@ -277,26 +277,30 @@ def average(number_list):
     return average
 
 
-# ##############################################################################
-# # END OF SKILLS TEST; YOU CAN STOP HERE.
-#
-#
-# def intermediate_join_strings(list_of_words):
-#     """Return a single string with each word from the input list
-#     separated by a comma.
-#
-#     Do this with a list comprehension. See
-#     https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
-#     for more info.
-#
-#     >>> intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
-#     'Labrador, Poodle, French Bulldog'
-#
-#     As above, if the list given is empty, it's fine if this function
-#     raises an error.
-#     """
-#     return ""
-#
+##############################################################################
+# END OF SKILLS TEST; YOU CAN STOP HERE.
+
+
+def intermediate_join_strings(list_of_words):
+    """Return a single string with each word from the input list
+    separated by a comma.
+
+    Do this with a list comprehension. See
+    https://docs.python.org/2/tutorial/datastructures.html#list-comprehensions
+    for more info.
+
+    >>> intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
+    'Labrador, Poodle, French Bulldog'
+
+    As above, if the list given is empty, it's fine if this function
+    raises an error.
+    """
+
+    joined_words = [word for word in list_of_words]
+
+    return joined_words
+
+print intermediate_join_strings(["Labrador", "Poodle", "French Bulldog"])
 #
 # def adv_find_unique_long_words(my_string):
 #     """Return a list of words that only appeared only once
